@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style="
+    position: relative;
+    height: 100%;
+    width: 100%;
+">
+  <head>
+    <!-- <base target="_top"> -->
+  </head>
+  <body>
+    <div w3-include-html="view_content.html"></div> <!-- <?!= pageUrl ?> -->
+  </body>
+
+  <script>
+
+  // Data that will be set by backend
+  var invDef = {};
+  var assets = {};
+  var assetsList = [];
+  
+  var data = {};
+  var oldData = data;
+  var categories = [];
+  
+  // Fetch data from the backend data json string, or fetch it from a URL
+  function GetData(jsonStr, url, onFinished)
+  {
+    // If it starts with < then it's an unprocessed string for Google App Script and we're running this locally,
+    // so load the data from the url, otherwise jsonStr will contain the data.
+    if(jsonStr[0] == "<")
+    {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            //if (this.status == 200) { this.responseText;}
+            //if (this.status == 404) {}
+            onFinished(this.responseText);
+        }
+        }
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+    else
+    {
+        onFinished(jsonStr);
+    }
+  }
+
+  function LoadData(d)
+  {
+    userName = d.user;
+    for (var i = 0; i < d.invDef.length; i++) { 
+      d.invDef[d.invDef[i][0]] = {
+        desc:d.invDef[i][1],
+        type:d.invDef[i][2]
+      };
+    }
+
+    for (var i = 0; i < d.assets.length; i++) {
+      assetsList.push({
+        id: d.assets[i][0],
+        name: d.assets[i][1],
+        type: d.assets[i][2],
+        data: d.assets[i][3],
+        rarity: d.assets[i][4],
+        cost: d.assets[i][5],
+        shopMode: d.assets[i][6],
+        folder: d.assets[i][7]
+      });
+      assets[assetsList[assetsList.length - 1].id] = assetsList[assetsList.length - 1];
+    } 
+
+    for (var i = 0; i < d.data.length; i++) {
+      data[d.data[i][0]] = {
+        num: d.data[i][1],
+        val: d.data[i][2]
+      };
+    }
+    oldData = data;
+
+    for (var i = 0; i < d.invDef.length; i++) {
+      if (d.invDef[i][2] == "equippable") {
+        categories.push({
+          id: d.invDef[i][0],
+          name: d.invDef[i][0],
+          img: d.invDef[i][3],
+        });
+      }
+    } 
+  }
+
+function includeJs(onFinished)
+{
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      if(elmnt.getAttribute("w3-include-js") == null)
+      {
+        continue;
+      }
+      if(elmnt.text.length > 0)
+      {
+        elmnt.removeAttribute("w3-include-js");
+        (1, eval)(elmnt.text);
+        continue;
+      }
+      file = elmnt.src;
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+                (1, eval)(this.responseText);
+            }
+            if (this.status == 404) {
+                
+            }
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-js");
+  
+            includeJs(onFinished);
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  
+    onFinished();
+}
+
+function includeHTML(onFinished) {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) 
+                    {
+                        var withHosting = this.responseText.replaceAll("<" + "?!= GetHostUrl() ?" + ">", hostingUrl);
+                        elmnt.innerHTML = withHosting; 
+                    }
+                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+
+                    includeHTML(onFinished);
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+        }
+    }
+
+
+    includeJs(onFinished);
+}
+
+  function ApplyUserData() {
+    ApplyUserDataToCharacter();
+  }
+
+  var jsonStr = `<?!= jsonStr ?>`;
+  var fakeDataUrl = "fake_data.json";
+  var hostingUrl = "<?!= GetHostUrl() ?>";
+  if(hostingUrl[0] == "<")
+  {
+      hostingUrl = "";
+      //hostingUrl = "https://rikbritt-avatar.pages.dev/avatar/";
+  }
+
+  function OnPageReady() {
+    GetData(jsonStr, fakeDataUrl,
+      function (jsonStr) {
+        console.log("Adding base");
+        document.head.innerHTML = document.head.innerHTML + "<base href='" + hostingUrl + "' />";
+        //document.write("<base href='https://rikbritt-avatar.pages.dev/avatar/' />");
+      //  var data = JSON.parse(jsonStr);
+        var data = JSON.parse(jsonStr);
+        
+        LoadData(data);
+        ApplyUserData();
+      }
+    )
+  }
+
+  includeHTML(
+    function () {
+        OnPageReady();
+    }
+  );
+
+  </script>
+</html>

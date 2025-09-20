@@ -1,0 +1,277 @@
+
+<!--<link rel="stylesheet" href="<?!= GetHostUrl() ?>common.css">-->
+<!--<link rel="stylesheet" href="<?!= GetHostUrl() ?>character.css">-->
+<!--<link rel="stylesheet" href="<?!= GetHostUrl() ?>edit.css">-->
+
+<div w3-include-html="<?!= GetHostUrl() ?>common_css.html"></div>
+<div w3-include-html="<?!= GetHostUrl() ?>character_css.html"></div>
+<div w3-include-html="<?!= GetHostUrl() ?>edit_css.html"></div>
+
+<!-- preload -->
+<div style="display:none;">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/common.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/uncommon.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/rare.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/ultra_rare.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/epic.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/legendary.png">
+    <img src="<?!= GetHostUrl() ?>ui/rarity/mythic.png">
+</div>
+
+<!-- Character -->
+<!-- <div class="jersey-10-regular characterContainer">
+    <div w3-include-html="character.html"></div>
+</div> -->
+
+
+<div class="editContainer">
+      
+    <div class="characterEditContainer">
+        <div w3-include-html="<?!= GetHostUrl() ?>character.html"></div>
+      <!-- Revert Button -->
+      <img src="ui/left.png" style="
+          position: absolute;
+          height: 10%;
+          right: 5%;
+          top: 2%;
+      " onclick="Edit_Revert();">
+    </div>
+
+    <div class="redeemContainer">
+      <!-- Chandelier -->
+      <div style="
+        position: absolute;
+        top: -5%;
+        height: 35%;
+        left: 5%;
+      " class="rockingAnim">
+          <img src="<?!= GetHostUrl() ?>ui/candle_chandelier.gif" style="height: 100%;">
+      </div>
+      <div style="position: relative; height: 100%;">
+        <!--<img src="ui/chest_open.gif" class="chestOpenImg"> -->
+        <video muted class="chestOpenImg" id="rewardOpen">
+          <source src="<?!= GetHostUrl() ?>ui/chest_open_vid.webm">
+        </video>
+      </div>
+
+      <div class="chestErrorContainer" style="display:none;" id="rewardError">
+          <img src="<?!= GetHostUrl() ?>ui/error.png" style="height: 30%;">
+      </div>
+
+      <div class="chestRewardContainer" style="display:none;" id="rewardedItem">
+          <img src="<?!= GetHostUrl() ?>ui/gem_small.gif" id="rewardedItemImg" class="img_max_size rewardLeaveChestAnim"
+            style="translate: -50% -50%; position: absolute;"
+          >
+          <div id="rewardItemAmount" class="rewardLeaveChestAnimAmount" style="
+            font-size: 70cqh;
+            color: white;
+            text-shadow: 0 0 20px #000, 0 0 20px #000, 0 0 20px #000;
+        ">123</div>
+      </div>
+
+      <!-- frame -->
+      <div class="fullImage">
+          <img src="<?!= GetHostUrl() ?>ui/panel_frame.png" style="height: 100%;">
+      </div>
+
+      <!-- sign -->
+      <div style="
+                position: absolute;
+                top: -4%;
+                height: 20%;
+                left: 50%;
+                translate: -50% 0;
+                container-type: size;
+                width: 40%;
+                animation-duration: 2.8s
+              " class="rockingAnim">
+                  <img src="<?!= GetHostUrl() ?>ui/sign.png" style="
+                  height: 100%;
+                  position: absolute;
+              ">
+        <div style="
+          position: absolute;
+          top: 40%;
+          font-size: 50cqh;
+          left: 50%;
+          translate: -50% 0;
+      ">TREASURE</div>
+      </div>
+
+      <!-- Old 'enter code' way -->
+      <!--
+      <div class="redeemInputContainer">
+        <input type="text" id="code" class="redeemInput">
+        <button onclick="TryRedeem();" class="redeemButton">Redeem</button>
+      </div>
+      -->
+
+      <div class="redeemPendingContainer">
+        <div id="pending_rewards" class="redeemPending">-</div>
+        <button id="pending_button" onclick="OpenPendingReward();" class="redeemButton">Use Key</button>
+      </div>
+
+      <div id="waitBox" style="
+        display:none;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        left: 0px; background-image: url('https://i0.wp.com/media3.giphy.com/media/xdH0MjQ83lGFVv7gjR/giphy.gif?resize=375%2C375&ssl=1');
+        background-size: 100% 100%;">
+      </div>
+    </div>
+
+    <div class="shopContainer">
+
+      <div class="gemsContainer">
+        <img src="<?!= GetHostUrl() ?>ui/gem_small.gif" style="height:60%;">
+        <span id="gems" style="">?</span>
+      </div>
+
+      <!-- Item Categories Tabs -->
+      <div id="category_tabs" style="position: absolute;
+        top: 18%;
+        height: 10%;
+        left: 50%;
+        translate: -50% 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        text-wrap-mode: nowrap;
+        scrollbar-color: #ba6733 #141414;
+        scrollbar-width: thin;"
+      >
+      </div>
+
+      <div id="shop_items" class="shop_items_container">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+        <img src="<?!= GetHostUrl() ?>ui/shop_item_back.png">
+      </div>
+
+      <div id="shop_selected_panel" class="shop_selected_container">
+        <img id="shop_selected_rarity" src="<?!= GetHostUrl() ?>ui/rarity/rare.png" style="
+          left: 75%;
+          position: absolute;
+          translate: -50% -50%;
+          top: 60%;
+          height: 35%;
+        ">
+        <div id="item_cost" style="
+          left: 5%;
+          position: absolute;
+          top: 35%;
+          display: block;
+          font-size: 50cqh;
+          color: white;
+          width: 50%;
+          text-align: center;
+        "></div>
+        <div id="item_name" style="
+          left: 5%;
+          position: absolute;
+          top: 10%;
+          display: block;
+          font-size: 32cqh;
+          color: white;
+          width: 90%;
+          text-align: center;
+        ">- - -</div>
+      </div>
+
+      <!-- Buy Button -->
+      <div id="buy" class="shop_button_container" style="
+        height: 10%;
+        left: 50%;
+        position: absolute;
+        top: 87%;
+        display: none;
+        translate: -50% 0;
+        width: 25%;
+      " onclick="Shop_BuySelectedItem();"><span style="font-size:80cqh">Buy<span></div>
+
+      <!-- Set/Save Button -->
+      <div id="set_item" class="shop_button_container"  style="
+        height: 10%;
+        left: 50%;
+        position: absolute;
+        top: 87%;
+        display: none;
+        translate: -50% 0;
+        width: 25%;
+      " onclick="Edit_Save();"><span style="font-size:80cqh">Save<span></div>
+      
+      <!-- sign -->
+      <div style="
+          position: absolute;
+          top: -4%;
+          height: 22.5%;
+          left: 28%;
+          translate: -50% 0;
+          container-type: size;
+          width: 45%;
+          animation-duration: 2.6s;
+              " class="rockingAnim">
+                  <img src="<?!= GetHostUrl() ?>ui/sign.png" style="
+                  height: 100%;
+                  position: absolute;
+              ">
+        <div style="
+          position: absolute;
+          top: 40%;
+          font-size: 50cqh;
+          left: 50%;
+          translate: -50% 0;
+      ">SHOP</div>
+      </div>
+
+      <!-- Shop Wait -->
+      <div id="shop_wait" class="shop_wait_container" style="
+      display:none;
+      ">
+        <img src="<?!= GetHostUrl() ?>ui/wait.gif" style="
+            position: absolute;
+            left: 50%;
+            translate: -50% -50%;
+            top: 50%;
+            height: 60%;
+            filter: brightness(0.5);
+        ">
+        <span id="shop_wait_text">Saving</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript" src="<?!= GetHostUrl() ?>common.js" w3-include-js></script>
+<script type="text/javascript" src="<?!= GetHostUrl() ?>character.js" w3-include-js></script>
+<script type="text/javascript" src="<?!= GetHostUrl() ?>edit.js" w3-include-js></script>
+<script type="text/javascript" src="<?!= GetHostUrl() ?>redeem.js" w3-include-js></script>
+
+<script w3-include-js>
+
+  function ApplyUserData()
+  {
+    // todo - make it do this once:
+  Shop_UpdateItemsDisplay();
+  SetupShopTabs();
+
+
+      ApplyUserDataToCharacter();
+      ApplyUserDataToCharacterSelection();
+      ApplyUserDataToPendingReward();
+      RefreshShopSelections();
+      document.getElementById("gems").textContent = data["gems"].num;
+      oldData = data;
+  }
+
+</script>

@@ -1,0 +1,1113 @@
+{
+    "user": "richardjbritt",
+    "data": [
+      [
+        "gems",
+        2685, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "gems_spent",
+        350, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "diamonds",
+        2, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "admin",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_blue_mountain",
+        3, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "equipped_bg",
+        1, "bg_meadow_horses_02",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "equipped_body",
+        1, "ch_squid_square",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "equipped_frame",
+        1, "frame_stone_01",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_sky_purple_clouds",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_mountain",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_mountain_pass",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_red_mountain",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_archer",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "frame_stone_01",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "frame_none",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "reward",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_none",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_enchantress",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_smaller_lower",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "equipped_placement",
+        1, "p_smaller_bottom",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_full",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_dungeon_01",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_kawaii_bunny",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_extreme_closeup",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_kawaii_carrot",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_smaller_bottom",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_snow_mountain",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_extreme_closeup_spin",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "p_closeup",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_sky_moon",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_sky_pink_clouds_plane",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_land_river_mountain",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_snow_mountain_top",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg_meadow_horses_02",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "ch_squid_square",
+        1, "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "assets": [
+      [
+        "folder_frames",
+        "Basic",
+        "folder",
+        "ui/shop_type_frame.png",
+        "",
+        0, "folder",
+        ""
+      ],
+      [
+        "frame_none",
+        "No Frame",
+        "frame",
+        "frames/frame_none.png",
+        "common",
+        30, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_stone_01",
+        "Stone",
+        "frame",
+        "frames/frame_stone_01.png",
+        "common",
+        30, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_stones_06",
+        "Stone",
+        "frame",
+        "frames/frame_stones_06.png",
+        "common",
+        30, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_crystals_01",
+        "Crystals",
+        "frame",
+        "frames/frame_crystals_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_crystals_02",
+        "Crystals",
+        "frame",
+        "frames/frame_crystals_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_gold_02",
+        "Gold",
+        "frame",
+        "frames/frame_gold_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_frames"
+      ],
+      [
+        "frame_gold_03",
+        "Gold",
+        "frame",
+        "frames/frame_gold_03.png",
+        "uncommon",
+        60, "buyable",
+        "folder_frames"
+      ],
+      [
+        "folder_bg",
+        "Backgrounds",
+        "folder",
+        "ui/shop_type_bg.png",
+        "",
+        0, "folder",
+        ""
+      ],
+      [
+        "folder_bg_colours",
+        "Colours",
+        "folder",
+        "backgrounds/gradient_white_black.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_colour_white",
+        "White",
+        "bg",
+        "backgrounds/colour_white.png",
+        "common",
+        20, "buyable",
+        "folder_bg_colours"
+      ],
+      [
+        "bg_colour_black",
+        "Black",
+        "bg",
+        "backgrounds/colour_black.png",
+        "common",
+        20, "buyable",
+        "folder_bg_colours"
+      ],
+      [
+        "bg_gradient_white_black",
+        "Gradient 1",
+        "bg",
+        "backgrounds/gradient_white_black.png",
+        "common",
+        25, "buyable",
+        "folder_bg_colours"
+      ],
+      [
+        "folder_bg_mountains",
+        "Mountains",
+        "folder",
+        "backgrounds/land_mountain.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_land_blue_mountain",
+        "Blue Mountain",
+        "bg",
+        "backgrounds/land_blue_mountain.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_land_mountain",
+        "The Mountain",
+        "bg",
+        "backgrounds/land_mountain.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_land_mountain_pass",
+        "Mountain Pass",
+        "bg",
+        "backgrounds/land_mountain_pass.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_land_red_mountain",
+        "Red Mountain",
+        "bg",
+        "backgrounds/land_red_mountain.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_land_river_mountain",
+        "River Mountain",
+        "bg",
+        "backgrounds/land_river_mountain.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_land_snow_mountain",
+        "Snow Mountain",
+        "bg",
+        "backgrounds/land_snow_mountain.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "bg_snow_mountain_top",
+        "Snow Top",
+        "bg",
+        "backgrounds/snow_mountain_top.png",
+        "common",
+        30, "buyable",
+        "folder_bg_mountains"
+      ],
+      [
+        "folder_bg_skies",
+        "Skies",
+        "folder",
+        "backgrounds/sky_pink_clouds.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_sky_moon",
+        "Sky Moon",
+        "bg",
+        "backgrounds/sky_moon.png",
+        "common",
+        50, "buyable",
+        "folder_bg_skies"
+      ],
+      [
+        "bg_sky_pink_clouds",
+        "Pink Clouds",
+        "bg",
+        "backgrounds/sky_pink_clouds.png",
+        "common",
+        50, "buyable",
+        "folder_bg_skies"
+      ],
+      [
+        "bg_sky_pink_clouds_plane",
+        "Pink Clouds 2",
+        "bg",
+        "backgrounds/sky_pink_clouds_plane.png",
+        "common",
+        50, "buyable",
+        "folder_bg_skies"
+      ],
+      [
+        "bg_sky_purple_clouds",
+        "Purple Clouds",
+        "bg",
+        "backgrounds/sky_purple_clouds.png",
+        "uncommon",
+        60, "hidden",
+        "folder_bg_skies"
+      ],
+      [
+        "folder_bg_cats",
+        "Cats",
+        "folder",
+        "backgrounds/cat_cafe_01.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_cat_cafe_01",
+        "Cat Cafe 1",
+        "bg",
+        "backgrounds/cat_cafe_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_cats"
+      ],
+      [
+        "bg_cat_cafe_02",
+        "Cat Cafe 2",
+        "bg",
+        "backgrounds/cat_cafe_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_cats"
+      ],
+      [
+        "bg_meadow_cats_01",
+        "Cat Meadow 1",
+        "bg",
+        "backgrounds/meadow_cats_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_cats"
+      ],
+      [
+        "bg_meadow_cats_02",
+        "Cat Meadow 2",
+        "bg",
+        "backgrounds/meadow_cats_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_cats"
+      ],
+      [
+        "folder_bg_dungeons",
+        "Dungeons",
+        "folder",
+        "backgrounds/dungeon_01.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_dungeon_01",
+        "Dungeon",
+        "bg",
+        "backgrounds/dungeon_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_dungeons"
+      ],
+      [
+        "bg_tower_01",
+        "Tower",
+        "bg",
+        "backgrounds/tower_01.png",
+        "common",
+        30, "buyable",
+        "folder_bg_dungeons"
+      ],
+      [
+        "folder_bg_meadows",
+        "Meadows",
+        "folder",
+        "backgrounds/meadow_01.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_meadow_01",
+        "Meadow",
+        "bg",
+        "backgrounds/meadow_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_meadows"
+      ],
+      [
+        "bg_meadow_02",
+        "Meadow 2",
+        "bg",
+        "backgrounds/meadow_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_meadows"
+      ],
+      [
+        "bg_northern_lights_01",
+        "Northern Lights 1",
+        "bg",
+        "backgrounds/northern_lights_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_meadows"
+      ],
+      [
+        "bg_northern_lights_02",
+        "Northern Lights 2",
+        "bg",
+        "backgrounds/northern_lights_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_meadows"
+      ],
+      [
+        "bg_northern_lights_03",
+        "Northern Lights 3",
+        "bg",
+        "backgrounds/northern_lights_03.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_meadows"
+      ],
+      [
+        "folder_bg_horses",
+        "Horses",
+        "folder",
+        "backgrounds/stables_03.png",
+        "",
+        0, "folder",
+        "folder_bg"
+      ],
+      [
+        "bg_stables_03",
+        "Stables",
+        "bg",
+        "backgrounds/stables_03.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_stables_05",
+        "Stables",
+        "bg",
+        "backgrounds/stables_05.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_stables_06",
+        "Stables",
+        "bg",
+        "backgrounds/stables_06.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_stables_07",
+        "Stables",
+        "bg",
+        "backgrounds/stables_07.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_stables_night_01",
+        "Stables Night 1",
+        "bg",
+        "backgrounds/stables_night_01.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_stables_night_02",
+        "Stables Night 2",
+        "bg",
+        "backgrounds/stables_night_02.png",
+        "common",
+        40, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_meadow_horses_01",
+        "Horse Meadow 1",
+        "bg",
+        "backgrounds/meadow_horses_01.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "bg_meadow_horses_02",
+        "Horse Meadow 2",
+        "bg",
+        "backgrounds/meadow_horses_02.png",
+        "uncommon",
+        60, "buyable",
+        "folder_bg_horses"
+      ],
+      [
+        "folder_characters",
+        "Characters",
+        "folder",
+        "ui/shop_type_body.png",
+        "",
+        0, "folder",
+        ""
+      ],
+      [
+        "ch_none",
+        "No Character",
+        "body",
+        "frames/frame_none.png",
+        "common",
+        30, "buyable",
+        "folder_characters"
+      ],
+      [
+        "folder_ch_8bit",
+        "Low Res Peeps",
+        "folder",
+        "characters/archer.gif",
+        "",
+        0, "folder",
+        "folder_characters"
+      ],
+      [
+        "ch_archer",
+        "Archer",
+        "body",
+        "characters/archer.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "ch_enchantress",
+        "Enchantress",
+        "body",
+        "characters/enchantress.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "ch_knight",
+        "Knight",
+        "body",
+        "characters/knight.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "ch_musketeer",
+        "Musketeer",
+        "body",
+        "characters/musketeer.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "ch_swordsman",
+        "Swordsman",
+        "body",
+        "characters/swordsman.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "ch_wizard",
+        "Wizard",
+        "body",
+        "characters/wizard.gif",
+        "common",
+        80, "buyable",
+        "folder_ch_8bit"
+      ],
+      [
+        "folder_ch_kawaii",
+        "Kawaii",
+        "folder",
+        "characters/kawaii_carrot.gif",
+        "",
+        0, "folder",
+        "folder_characters"
+      ],
+      [
+        "ch_kawaii_carrot",
+        "Kawaii Carrot",
+        "body",
+        "characters/kawaii_carrot.gif",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_bunny",
+        "Kawaii Bunny",
+        "body",
+        "characters/kawaii_bunny.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_panda",
+        "Kawaii Panda",
+        "body",
+        "characters/kawaii_panda.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_lion",
+        "Kawaii Lion",
+        "body",
+        "characters/kawaii_lion.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_croc",
+        "Kawaii Croc",
+        "body",
+        "characters/kawaii_croc.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_cat",
+        "Kawaii Cat",
+        "body",
+        "characters/kawaii_cat.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_cat2",
+        "Kawaii Cat 2",
+        "body",
+        "characters/kawaii_cat2.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_cow",
+        "Kawaii Cow",
+        "body",
+        "characters/kawaii_cow.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "ch_kawaii_frog",
+        "Kawaii Frog",
+        "body",
+        "characters/kawaii_frog.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_kawaii"
+      ],
+      [
+        "folder_ch_squid",
+        "Squid Games",
+        "folder",
+        "characters/squid_square.png",
+        "",
+        0, "folder",
+        "folder_characters"
+      ],
+      [
+        "ch_squid_square",
+        "Squid Game Square",
+        "body",
+        "characters/squid_square.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_squid"
+      ],
+      [
+        "ch_squid_triangle",
+        "Squid Game Triange",
+        "body",
+        "characters/squid_triangle.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_squid"
+      ],
+      [
+        "ch_squid_circle",
+        "Squid Game Circle",
+        "body",
+        "characters/squid_circle.png",
+        "uncommon",
+        90, "buyable",
+        "folder_ch_squid"
+      ],
+      [
+        "gems",
+        "Gems",
+        "gems",
+        "ui/gem_small.gif",
+        "common",
+        0, "hidden",
+        ""
+      ],
+      [
+        "folder_placements",
+        "Placements",
+        "folder",
+        "ui/shop_type_placement.png",
+        "",
+        0, "folder",
+        ""
+      ],
+      [
+        "p_full",
+        "Full",
+        "placement",
+        "placement/full.png",
+        "common",
+        10, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_smaller_lower",
+        "Smaller & Lower",
+        "placement",
+        "placement/smaller_lower.png",
+        "common",
+        10, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_smaller_bottom",
+        "Smaller On Bottom",
+        "placement",
+        "placement/smaller_bottom.png",
+        "common",
+        10, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_closeup",
+        "Closeup",
+        "placement",
+        "placement/closeup.png",
+        "uncommon",
+        40, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_closeup_spin",
+        "Closeup Spin",
+        "placement",
+        "placement/closeup_spin.gif",
+        "uncommon",
+        50, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_extreme_closeup",
+        "Extreme Closeup",
+        "placement",
+        "placement/extreme_closeup.png",
+        "uncommon",
+        50, "buyable",
+        "folder_placements"
+      ],
+      [
+        "p_extreme_closeup_spin",
+        "Extreme Closeup Spin",
+        "placement",
+        "placement/extreme_closeup_spin.gif",
+        "uncommon",
+        60, "buyable",
+        "folder_placements"
+      ]
+    ],
+    "invDef": [
+      [
+        "gems",
+        "Beautiful shiny gems",
+        "currency",
+        "ui/gems.gif",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "bg",
+        "",
+        "equippable",
+        "ui/shop_type_bg.png",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "frame",
+        "",
+        "equippable",
+        "ui/shop_type_frame.png",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "body",
+        "",
+        "equippable",
+        "ui/shop_type_body.png",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "placement",
+        "",
+        "equippable",
+        "ui/shop_type_placement.png",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "folder",
+        "",
+        "folder",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  }

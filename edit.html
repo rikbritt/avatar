@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html style="
+    position: relative;
+    height: 100%;
+    width: 100%;
+">
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <div w3-include-html="edit_content.html"></div>
+  </body>
+
+  <script>
+  var hostingUrl = "";//<?!= GetHostUrl() ?>";
+  var userName = "";//<?= user ?>";
+  var invDef = {};
+  var assets = {};
+  var assetsList = [];
+
+  var data = {};
+  var oldData = data;
+
+  var categories = [];
+
+  function LoadData(d)
+  {
+    userName = d.user;
+    for (var i = 0; i < d.invDef.length; i++) { 
+      invDef[d.invDef[i][0]] = {
+        desc:d.invDef[i][1],
+        type:d.invDef[i][2]
+      };
+    }
+
+    for (var i = 0; i < d.assets.length; i++) {
+      assetsList.push({
+        id: d.assets[i][0],
+        name: d.assets[i][1],
+        type: d.assets[i][2],
+        data: d.assets[i][3],
+        rarity: d.assets[i][4],
+        cost: d.assets[i][5],
+        shopMode: d.assets[i][6],
+        folder: d.assets[i][7]
+      });
+      assets[assetsList[assetsList.length - 1].id] = assetsList[assetsList.length - 1];
+    } 
+
+    for (var i = 0; i < d.data.length; i++) {
+      data[d.data[i][0]] = {
+        num: d.data[i][1],
+        val: d.data[i][2]
+      };
+    }
+    oldData = data;
+
+    for (var i = 0; i < invDef.length; i++) {
+      if (d.invDef[i][2] == "equippable") {
+        categories.push({
+          id: invDef[i][0],
+          name: d.invDef[i][0],
+          img: d.invDef[i][3],
+        });
+      }
+    } 
+  }
+
+function GetData(url, onFinished)
+{
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      //if (this.status == 200) { this.responseText;}
+      //if (this.status == 404) {}
+      onFinished(this.responseText);
+    }
+  }
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function includeJs(onFinished)
+{
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      if(elmnt.getAttribute("w3-include-js") == null)
+      {
+        continue;
+      }
+      if(elmnt.text.length > 0)
+      {
+        elmnt.removeAttribute("w3-include-js");
+        (1, eval)(elmnt.text);
+        continue;
+      }
+      file = elmnt.src;
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+                (1, eval)(this.responseText);
+            }
+            if (this.status == 404) {
+                
+            }
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-js");
+  
+            includeJs(onFinished);
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  
+    onFinished();
+}
+
+function includeHTML(onFinished) {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+
+                    includeHTML(onFinished);
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+        }
+    }
+
+
+    includeJs(onFinished);
+}
+
+  var jsonStr = `<?!= jsonStr ?>`;
+  var dataUrl = "fake_data.json";// "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiKbYiJBffMvtltI_fxzdBkb0YyrSaTd2ZlsNUhPzOEK3y_EtWp47YClH0ySXfcz73NO1wKJ-a3LEqDRyH-_MIo_UCIDFB4rrLy5lg35BfZzsrHjM_vQhM2ATO70sHYdvW-Y1bz2TrlzwjsxJvALGaDMPeoANH2OPw13g4X6etkth4J4NN-CjL-G8ucXD3CWiBl_oIfN2T4rguCe5A2aFQJQqKg5M-VVSbdhcADcpiXiUcZOQiz81JyDC0AnS7weTZP2Lbd&lib=MSeFlluAhOYWh0_7JI4wKQNq6TmynyjEw";
+  
+  GetData(dataUrl, //"fake_data.json",
+      function (jsonStr) {
+      //  var data = JSON.parse(jsonStr);
+        var data = JSON.parse(jsonStr);
+        //hostingUrl = "<?!= GetHostUrl() ?>";
+        LoadData(data);
+        includeHTML(
+            function () {
+                ApplyUserData();
+            }
+        );
+      }
+    );
+
+
+  </script>
+</html>

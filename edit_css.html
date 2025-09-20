@@ -1,0 +1,321 @@
+<style>
+  .editContainer {
+    width: 100%;
+    height: 33.3vw;
+    max-width: 300vh;
+    position: absolute;
+}
+
+.redeemContainer {
+    width: 33%;
+    height: 100%;
+    position: absolute;
+    right: 66%;
+    background-image: url('<?!= GetHostUrl() ?>ui/background_shop.png');
+    background-size: 100% 100%;
+}
+
+.characterEditContainer {
+    width: 33%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    translate: -50% 0px;
+}
+
+.shopContainer {
+    width: 33%;
+    height: 100%;
+    position: absolute;
+    left: 66%;
+    background-image: url('<?!= GetHostUrl() ?>ui/background_shop2.png');
+    background-size: 100% 100%;
+}
+
+.gemsContainer {
+  width: 50%;
+  top: 3%;
+  position: absolute;
+  text-align: center;
+  color: white;
+  height: 13%;
+  container-type: size;
+  left: 45%;
+}
+.gemsContainer span {
+    font-size: 100cqh;
+}
+
+.redeemInputContainer {
+    width: 100%;
+    bottom: 15%;
+    position: absolute;
+    text-align: center;
+    height: 10%;
+    container-type: size;
+}
+
+.redeemPendingContainer {
+    width: 100%;
+    bottom: 15%;
+    position: absolute;
+    text-align: center;
+    height: 10%;
+    container-type: size;
+}
+
+.redeemPending {
+  font-size: 100cqh;
+  color: white;
+}
+
+.redeemInput {
+    width: 90%;
+    height: 92%;
+    padding: 0px;
+    font-family: "Jersey 10", sans-serif;
+    text-align: center;
+    font-size: 90cqh;
+    background: #353535;
+    color: white;
+    border: none;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.redeemButton {
+    width: 90%;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 80cqh;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    top: 100%;
+}
+
+.selectWidgetContainer {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  container-type: size;
+}
+
+.chestOpenImg {
+  top: 0px;
+  height: 80%;
+  left: 50%;
+  position: absolute;
+  translate: -50% 0;
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}
+
+.chestWaitAnim {
+  animation: 0.4s infinite alternate horizontal-shaking;
+}
+
+.chestErrorContainer {
+  position: absolute;height: 100%;top: 30%;left: 50%;translate: -50% 0;
+}
+
+@keyframes reward-leave-chest-float-up {
+  0% {
+      top: 50%;
+      left: 50%;
+  }
+  45% {
+      top: 50%;
+      left: 50%;
+  }
+  100% {
+      top: 32%;
+      left: 50%;
+  }
+}
+
+@keyframes reward-leave-chest {
+  0% {
+      opacity: 0;
+      scale: 0.1;
+  }
+  45% {
+      opacity: 0;
+      scale: 0.1;
+  }
+  60% {
+      opacity: 1;
+  }
+  95% {
+      opacity: 1;
+  }
+
+  100% {
+      scale: 0.3;
+      opacity: 0;
+  }
+}
+
+@keyframes reward-leave-chest-amount {
+  0% {
+      opacity: 0;
+      scale: 0.1;
+  }
+  45% {
+      opacity: 0;
+      scale: 0.1;
+  }
+  60% {
+      opacity: 0;
+  }
+  95% {
+      opacity: 1;
+  }
+
+  100% {
+      scale: 0.3;
+      opacity: 0;
+  }
+}
+.rewardLeaveChestAnim {
+    animation: reward-leave-chest 5000ms linear 1, reward-leave-chest-float-up 5000ms linear 1;
+    animation-fill-mode: forwards;
+    translate: -50% -50%;
+    position: absolute;
+}
+
+.rewardLeaveChestAnimAmount {
+    animation: reward-leave-chest-amount 5000ms linear 1, reward-leave-chest-float-up 5000ms linear 1;
+    animation-fill-mode: forwards;
+    translate: -50% -50%;
+    position: absolute;
+}
+
+.chestRewardContainer {
+  position: absolute;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  container-type: size;
+}    
+
+@keyframes rainbow {
+  from {filter: hue-rotate(0deg);}
+  to {filter: hue-rotate(360deg);}
+}
+
+.rainbowAnim {
+    animation-name: rainbow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rocking {
+  from {rotate: -3deg;}
+  to {rotate: 3deg;}
+}
+
+.rockingAnim {
+  animation-name: rocking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50% 10%;
+}
+
+.shop_button_container {
+  background-size: 100% 100%;
+  background-image: url(<?!= GetHostUrl() ?>ui/shop_selected_panel.png);
+  container-type: size;
+  color: wheat;
+  text-align: center;
+}
+
+.shop_button_container span {
+  user-select: none;
+}
+.shop_items_container {
+  position: absolute;
+  top: 28%;
+  height: 36%;
+  width: 85%;
+  left: 50%;
+  translate: -50% 0;
+  overflow-y: auto;
+}
+
+.shop_item_container {
+  height:44%;
+  display:inline-block;
+}
+
+.shop_item_container_inner {
+  position:relative;
+  height:100%;
+}
+
+.shop_item_bg {
+  height:100%;
+}
+
+.shop_item_bg_bought {
+  filter: hue-rotate(45deg);
+}
+
+.shop_item_img {
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  translate: -50% 0%;
+}
+
+.shop_selected_container {
+  position: absolute;
+  height: 22%;
+  width: 90%;
+  background-image: url("<?!= GetHostUrl() ?>ui/shop_selected_panel.png");
+  top: 65%;
+  background-size: 100% 100%;
+  left: 50%;
+  container-type: size;
+  translate: -50% 0;
+}
+
+.img_max_size {
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  zoom: 10;
+}
+
+.shop_wait_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #05080a9e;
+  container-type: size;
+}
+
+.shop_wait_container span {
+  font-size: 20cqh;
+  color: white;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+}
+</style>
