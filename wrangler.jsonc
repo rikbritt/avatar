@@ -6,7 +6,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rik-avatar-github",
-  "compatibility_date": "2025-09-220",
+  "compatibility_date": "2025-09-20",
   "preview_urls": false,
   "assets": {
     "directory": "./content"
