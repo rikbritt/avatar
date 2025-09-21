@@ -78,19 +78,60 @@ function PlayCodeRedeemedAnim(itemName, amount) {
 }
 
 // Open the chest but wait before showing the item
-function PlayOpenChestAnim() {
+var openChestListener = null;
+var openChestEndTime = 2.11;
+function StopChestOpenAtEnd()
+{
+  var video = document.getElementById("rewardOpen");
+  if (video.currentTime >= openChestEndTime) {
+      video.pause();
+      video.removeEventListener('timeupdate', StopChestOpenAtEnd);
+  }
+}
+
+function PlayOpenChestAnim()
+{
   document.getElementById("rewardError").style.display = "none";
+  document.getElementById("rewardedItem").style.display = "none";
 
   var video = document.getElementById("rewardOpen");
+  video.currentTime = 0;
   video.play();
-  video.addEventListener('timeupdate', function () {
-      if (video.currentTime >= 3) {
-          video.pause();
-      }
-  });
+  openChestListener = video.addEventListener('timeupdate', StopChestOpenAtEnd);
+}
 
+function PlayShowChestContentAnim(itemName, amount)
+{
+  document.getElementById("rewardedItemImg").src = hostingUrl + assets[itemName].data;
+  document.getElementById("rewardError").style.display = "none";
+  var video = document.getElementById("rewardOpen");
+  video.currentTime = openChestEndTime;
+  video.play();
   document.getElementById("rewardedItem").style.display = "block";
   document.getElementById("rewardedItemImg").classList.add("rewardLeaveChestAnim");
+  document.getElementById("rewardedItemImg").classList.add("rewardChestLeaveTimeOffset");
+  
+  var startNumGems = parseInt(oldData["gems"].num);
+  RestartAnimations(
+    document.getElementById("rewardedItemImg"),
+    function () {
+      ApplyUserData();
+      if (itemName == "gems") {
+        CountUp("gems", startNumGems, startNumGems + amount);
+      }
+    }
+  );
+
+  if (amount == 1) {
+    document.getElementById("rewardItemAmount").style.display = "none";
+  }
+  else {
+    document.getElementById("rewardItemAmount").textContent = amount;
+    document.getElementById("rewardItemAmount").classList.add("rewardLeaveChestAnimAmount");
+    document.getElementById("rewardItemAmount").classList.add("rewardChestLeaveTimeOffset");
+    RestartAnimations(document.getElementById("rewardItemAmount"));
+    document.getElementById("rewardItemAmount").style.display = "block";
+  }
 }
 
 function PlayCodeFailedAnim() {
