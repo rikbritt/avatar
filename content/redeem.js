@@ -108,8 +108,7 @@ function PlayShowChestContentAnim(itemName, amount)
   video.currentTime = openChestEndTime;
   video.play();
   document.getElementById("rewardedItem").style.display = "block";
-  document.getElementById("rewardedItemImg").classList.add("rewardLeaveChestAnim");
-  document.getElementById("rewardedItemImg").classList.add("rewardChestLeaveTimeOffset");
+  document.getElementById("rewardedItemImg").classList.add("rewardLeaveChestAnim2");
   
   var startNumGems = parseInt(oldData["gems"].num);
   RestartAnimations(
@@ -127,8 +126,7 @@ function PlayShowChestContentAnim(itemName, amount)
   }
   else {
     document.getElementById("rewardItemAmount").textContent = amount;
-    document.getElementById("rewardItemAmount").classList.add("rewardLeaveChestAnimAmount");
-    document.getElementById("rewardItemAmount").classList.add("rewardChestLeaveTimeOffset");
+    document.getElementById("rewardItemAmount").classList.add("rewardLeaveChestAnimAmount2");
     RestartAnimations(document.getElementById("rewardItemAmount"));
     document.getElementById("rewardItemAmount").style.display = "block";
   }
