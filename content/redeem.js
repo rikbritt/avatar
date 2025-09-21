@@ -102,7 +102,17 @@ function GetPendingRewards() {
     return [];
   }
 
-  var rewards = data["reward"].val.split(",").filter(Boolean);;
+  var rewardsData = data["reward"].val.split(",").filter(Boolean);
+  var rewards = [];
+  for(var rewardIdx = 0; rewardIdx<rewardsData.length; rewardIdx += 2)
+  {
+    rewards.push(
+      {
+        id:rewardsData[rewardIdx],
+        amount:rewardsData[rewardIdx+1]
+      }
+    )
+  }
   return rewards;
 }
 
