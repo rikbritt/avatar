@@ -77,6 +77,22 @@ function PlayCodeRedeemedAnim(itemName, amount) {
   }
 }
 
+// Open the chest but wait before showing the item
+function PlayOpenChestAnim() {
+  document.getElementById("rewardError").style.display = "none";
+
+  var video = document.getElementById("rewardOpen");
+  video.play();
+  video.addEventListener('timeupdate', function () {
+      if (video.currentTime >= 3) {
+          video.pause();
+      }
+  });
+
+  document.getElementById("rewardedItem").style.display = "block";
+  document.getElementById("rewardedItemImg").classList.add("rewardLeaveChestAnim");
+}
+
 function PlayCodeFailedAnim() {
   document.getElementById("rewardError").style.display = "block";
   document.getElementById("rewardedItem").style.display = "none";
